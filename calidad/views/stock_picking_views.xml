@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_picking_form_inherited_calidad" model="ir.ui.view">
+        <field name="name">stock.picking.form.inherited.calidad</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='move_ids_without_package']//field[@name='product_uom_qty']" position="after">
+                <field name="quality_point_id" column_invisible="1"/>
+                <field name="quality_check_id" column_invisible="1"/>
+
+                <field name="quality_check_state" string="Estado Calidad" widget="badge"
+                       decoration-success="quality_check_state == 'pass'"
+                       decoration-danger="quality_check_state == 'fail'"
+                       decoration-info="quality_check_state == 'none'"/>
+
+                <button name="action_solicitud_analisis" type="object" icon="fa-flask" title="Solicitar Análisis" invisible="not quality_point_id or quality_check_id" class="oe_link"/>
+                <button name="action_view_quality_check" type="object" icon="fa-search" title="Ver Control" invisible="not quality_check_id" class="oe_link"/>
+                
+                <button name="action_print_report_ram" type="object" string="RAM" icon="fa-file-pdf-o" title="Imprimir Reporte RAM (Externa)"
+                        invisible="not quality_check_id or quality_check_state != 'none'"
+                        class="oe_link"/>
+                <button name="action_print_report_cer" type="object" string="CER" icon="fa-file-pdf-o" title="Imprimir Reporte CER (Interna)"
+                        invisible="not quality_check_id or quality_check_state != 'none'"
+                        class="oe_link"/>
+
+                <button name="action_open_scrap_wizard" type="object" icon="fa-trash"
+                        title="Enviar a desecho"
+                        invisible="quality_check_state != 'fail'"
+                        class="oe_link text-danger"/>
+
+                <button string="Sin control" disabled="1" class="btn-link text-muted pe-none" invisible="quality_point_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

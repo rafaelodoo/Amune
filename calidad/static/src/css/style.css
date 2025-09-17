@@ -1,0 +1,11 @@
+.btn-solicitud-analisis {
+    background-color: #3B83BD !important;
+    border-color: #306999 !important; /* Un borde ligeramente más oscuro */
+    color: white !important;
+}
+
+/* Efecto opcional al pasar el mouse por encima */
+.btn-solicitud-analisis:hover {
+    background-color: #316d9e !important;
+    border-color: #2c618c !important;
+}

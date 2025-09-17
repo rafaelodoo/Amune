@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="alimento_extencion_assets" model="ir.asset">
+            <field name="name">Alimento Extension JS Assets</field>
+            <field name="bundle">web.assets_backend</field>
+            <field name="path">alimento_extencion/static/src/js/stock_picking.js</field>
+        </record>
+    </data>
+</odoo> 

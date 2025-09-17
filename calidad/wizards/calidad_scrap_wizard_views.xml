@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_calidad_scrap_wizard_form" model="ir.ui.view">
+        <field name="name">calidad.scrap.wizard.form</field>
+        <field name="model">calidad.scrap.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Enviar a Desecho">
+                <sheet>
+                    <group>
+                        <field name="move_id" invisible="1"/>
+                        <field name="product_id"/>
+                        <field name="quantity"/>
+                        <field name="location_id" options="{'no_create': True}"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_scrap_product" string="Aceptar" type="object" class="btn-primary" data-hotkey="q"/>
+                    <button string="Cancelar" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
