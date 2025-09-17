@@ -25,7 +25,7 @@
                         class="oe_link"/>
 
                 <button name="action_open_scrap_wizard" type="object" icon="fa-trash"
-                        title="Enviar a desecho"
+                        title="Enviar a desecho" 
                         invisible="quality_check_state != 'fail'"
                         class="oe_link text-danger"/>
 
