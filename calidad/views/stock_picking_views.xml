@@ -18,10 +18,10 @@
                 <button name="action_view_quality_check" type="object" icon="fa-search" title="Ver Control" invisible="not quality_check_id" class="oe_link"/>
                 
                 <button name="action_print_report_ram" type="object" string="RAM" icon="fa-file-pdf-o" title="Imprimir Reporte RAM (Externa)"
-                        invisible="not quality_check_id or quality_check_state != 'none'"
+                        invisible="not quality_check_id or quality_check_state != 'none' and quality_check_state != 'pass'"
                         class="oe_link"/>
                 <button name="action_print_report_cer" type="object" string="CER" icon="fa-file-pdf-o" title="Imprimir Reporte CER (Interna)"
-                        invisible="not quality_check_id or quality_check_state != 'none'"
+                        invisible="not quality_check_id or quality_check_state != 'none' and quality_check_state != 'pass'"
                         class="oe_link"/>
 
                 <button name="action_open_scrap_wizard" type="object" icon="fa-trash"
